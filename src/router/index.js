@@ -7,7 +7,7 @@ import {
   createRouter,
   createWebHistory
 } from 'vue-router'
-const Test = () => import('@/views/home/Test.vue') //主页
+const Test = () => import('@/views/Test.vue') //主页
 const routes = [{
     path: '/',
     redirect: '/Test'
