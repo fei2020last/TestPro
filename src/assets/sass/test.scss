@@ -1,0 +1,27 @@
+//颜色
+$blue : #7d7e80;//变量
+$width: 200;
+.font_style {
+  font-weight: 600;
+  font-size: 22px;
+}
+//混合
+@mixin font_color {
+ color: lighten(rgb(238, 103, 13), 10%) // 颜色函数
+}
+
+.testSass {
+  color: $blue;
+  flex: 1;
+  padding: 8px;
+  // 嵌套
+  .useSass {
+    @extend .font_style; //继承 .font-style类
+    min-width: $width * 0.5; //计算特性
+    background: #FFFFFF;
+    @include font_color; //使用混合
+    border: 1px black dashed;
+  }
+}
+
+     

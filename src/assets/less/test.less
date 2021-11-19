@@ -1,0 +1,40 @@
+// 宽高 
+@width: 400px;
+@height: 500px;
+
+// 文本区背景
+@text_backgound_color: #f7f7f7;
+
+// 边框
+@border: 1px solid #56db3a;
+@border_green: 1px solid green;
+
+// 字体颜色
+@text_color_333: #333;
+@text_color_666: #666;
+@text_color_999: #999;
+@commonColor: #3b3834;
+
+// 字体大小
+@text_size_14: 14px;
+@text_size_18: 18px;
+
+/* 绿色边框 */
+.borderGreen {
+  border: @border_green;
+}
+
+/* 头部样式 */
+.header-center {
+  min-width: @width / 2; //宽运算
+  min-height: @height / 4; //高运算
+  font-size: @text_size_14;
+  text-align: center;
+  color: @commonColor + #333; //颜色运算（rgb()形式也可行），例如：#112233 + #111 ---> @223344
+  background: saturate(hsl(224, 12%, 82%), 20%); // saturate函数
+  /*
+     @width:0.5;
+     width: percentage(@width); // percentage 函数将 0.5 转换为 50%
+  */
+  .borderGreen(); //Less的混合特性
+}
