@@ -1,14 +1,20 @@
 <!-- index -->
 <template>
   <div class="Test">
-    <div class="topTitle">
-      <h2>这里是Test</h2>
+    <!-- 测试 Css -->
+    <div class="testCss">
+      <div class="fontStyle">测试 Css</div>
     </div>
-    <div class="header-center">引入Less文件</div>
+    <!-- 测试 Less -->
+    <div class="testLess">
+      <div class="header-center">测试 Less</div>
+      <a>我使用了混合特性</a>
+    </div>
 
     <!-- 测试 Sass -->
     <div class="testSass">
       <div class="useSass">测试 Sass</div>
+      <p>哈哈哈</p>
     </div>
   </div>
 </template>
@@ -45,18 +51,50 @@ export default {
   activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
 };
 </script>
+<style>
+/* Css样式*/
+.testCss {
+  flex: 1;
+  padding: 8px;
+}
+.fontStyle {
+  height: 100px;
+  border: 1px solid #ccc;
+  color: blue;
+  text-align: center;
+}
+</style>
+
 <style lang="less">
 //@import url(); 引入公共css类
 @import url("@/assets/less/test.less");
-//@import url("@/assets/sass/test.scss");
 .Test {
   height: 100%;
-  width: 100%;
-  .topTitle {
-    color: aqua;
+  display: flex;
+  padding: 8%;
+  .testLess {
+    flex: 1;
+    padding: 8px;
+    a {
+      margin-top: 5px;
+      .borderGreen();
+    }
+  }
+  //可以修改它的属性
+  .header-center {
+    font-size: @text_size_18;
   }
 }
 </style>
+<style lang="scss">
+@import url("~@/assets/sass/test.scss");
+.Test {
+  p {
+    color: blueviolet;
+  }
+}
+</style>
+
 <style lang="sass">
 .testSass
   flex: 1
