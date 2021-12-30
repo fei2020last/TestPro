@@ -7,16 +7,30 @@ import {
   createRouter,
   createWebHistory
 } from 'vue-router'
-const Test = () => import('@/views/Test.vue') //主页
+const Index = () => import('@/views/Index.vue') //主页
+const Test = () => import('@/views/Test.vue') //测试使用 Css、Less、Sass、Scss
+const MatrixBg = () => import('@/views/MatrixBg.vue') //黑客帝国背景
+
 const routes = [{
     path: '/',
-    redirect: '/Test'
+    redirect: '/Index'
+  },
+  {
+    name: 'Index',
+    path: '/Index',
+    component: Index,
   },
   {
     name: 'Test',
     path: '/Test',
     component: Test,
-  }
+  },
+  {
+    name: 'MatrixBg',
+    path: '/MatrixBg',
+    component: MatrixBg,
+  },
+
 ]
 const routerHistory = createWebHistory()
 const router = createRouter({
